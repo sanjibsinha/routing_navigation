@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import '/routing/category_main.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(
+    CategoryMain(),
+  );
 }
 
 class MyApp extends StatelessWidget {
