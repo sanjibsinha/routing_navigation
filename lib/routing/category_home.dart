@@ -50,27 +50,45 @@ class CategoryBooks extends StatelessWidget {
     required this.color,
   }) : super(key: key);
 
+  void selectCategory(BuildContext context) {
+    Navigator.pushNamed(
+      context,
+      '/test',
+      arguments: {
+        'id': id,
+        'title': title,
+        'color': color,
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      alignment: Alignment.center,
-      margin: const EdgeInsets.all(
-        10,
-      ),
-      padding: const EdgeInsets.all(
-        10,
-      ),
-      decoration: BoxDecoration(
-          color: color,
-          border: Border.all(
-            color: Colors.black38,
-            width: 10,
-          )),
-      child: Text(
-        title,
-        style: TextStyle(
-          fontWeight: FontWeight.bold,
-          fontSize: 20,
+    return InkWell(
+      onTap: () {
+        selectCategory(context);
+      },
+      splashColor: Colors.blue,
+      child: Container(
+        alignment: Alignment.center,
+        margin: const EdgeInsets.all(
+          10,
+        ),
+        padding: const EdgeInsets.all(
+          10,
+        ),
+        decoration: BoxDecoration(
+            color: color,
+            border: Border.all(
+              color: Colors.black38,
+              width: 10,
+            )),
+        child: Text(
+          title,
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 20,
+          ),
         ),
       ),
     );

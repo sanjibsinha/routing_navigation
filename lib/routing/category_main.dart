@@ -12,6 +12,7 @@ class CategoryMain extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.brown,
+        splashColor: Colors.black,
       ),
       initialRoute: '/',
       routes: {
