@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:routing_navigation/book_app/dummy_category.dart';
 
@@ -113,15 +111,18 @@ class CategoriesMain extends StatelessWidget {
     final Map arguments = ModalRoute.of(context)!.settings.arguments as Map;
     title = arguments['title'];
     color = arguments['color'];
-    return Container(
-      height: 400.0,
-      width: 400.0,
-      decoration: BoxDecoration(
-        color: color,
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('All $title Books'),
+        backgroundColor: color,
       ),
-      child: Text(
-        title,
-        style: Theme.of(context).textTheme.headline4,
+      body: GridView(
+        gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+          maxCrossAxisExtent: 200,
+          crossAxisSpacing: 20.0,
+          mainAxisSpacing: 20,
+        ),
+        children: [],
       ),
     );
   }
